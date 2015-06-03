@@ -17,10 +17,10 @@ class TaskController extends Controller {
 
 		// Если оптимальное решение не найдено, то ждем пополнения запасов
 		if (!isset($task->supply)) {
-        	return view('task', ['message' => 'На данный момент задач нет']);
+			return view('task', ['message' => 'На данный момент задач нет']);
 		}
 
-        return view('task', ['supply' => $task->supply, 'products' => $task->products, 'newSupply' => $task->newSupply]);
+		return view('task', ['supply' => $task->supply, 'products' => $task->products, 'newSupply' => $task->newSupply]);
 	}
 
 	// POST /task/complete
